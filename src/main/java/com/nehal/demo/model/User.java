@@ -1,5 +1,7 @@
 package com.nehal.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.UUID;
 
 public class User {
@@ -8,7 +10,9 @@ public class User {
     private final String firstName;
     private final String lastName;
 
-    public User(UUID id, String firstName, String lastName) {
+    public User(@JsonProperty("id") UUID id,
+                @JsonProperty("firstName") String firstName,
+                @JsonProperty("lastName") String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
