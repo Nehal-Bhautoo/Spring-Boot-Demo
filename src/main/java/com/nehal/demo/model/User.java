@@ -22,6 +22,8 @@ public class User {
     @Column(name="lastName")
     private String lastName;
 
+    public User() {}
+
     public User(
             @JsonProperty("uuid") UUID uuid,
             @JsonProperty("firstName") String firstName,
