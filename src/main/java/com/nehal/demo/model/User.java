@@ -33,6 +33,7 @@ public class User {
         this.lastName = lastName;
     }
 
+    // Getter
     public int getId() {
         return id;
     }
@@ -46,6 +47,7 @@ public class User {
         return lastName;
     }
 
+    // Setter
     public void setId(int id) {
         this.id = id;
     }

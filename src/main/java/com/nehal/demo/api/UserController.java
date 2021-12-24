@@ -29,6 +29,7 @@ public class UserController {
         userService.addUser(user);
     }
 
+    // get all user
     @GetMapping("/user")
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -36,7 +37,7 @@ public class UserController {
 
     // get user by id
     @GetMapping("/user/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Integer userId) throws ResourceNotFoundException {
         User user = userRepository.findById(userId).orElseThrow(() ->
                 new ResourceNotFoundException("User Not found" + userId));
         return ResponseEntity.ok().body(user);
