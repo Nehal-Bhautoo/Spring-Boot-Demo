@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("api/v1")
 @RestController
@@ -55,5 +57,17 @@ public class UserController {
         users.setLastName(userBody.getLastName());
         final User updatedUser = userRepository.save(users);
         return ResponseEntity.ok(updatedUser);
+    }
+
+    // Delete User
+    @DeleteMapping("/user/{id}")
+    public Map<String, Boolean> deleteUser(@PathVariable(value = "id") Integer userId)
+            throws ResourceNotFoundException {
+        User user = userRepository.findById(userId).orElseThrow(() ->
+                new ResourceNotFoundException("User Not found" + userId));
+        userRepository.delete(user);
+        Map < String, Boolean > response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
     }
 }
