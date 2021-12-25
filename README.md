@@ -9,6 +9,7 @@ For further reference, please consider the following sections:
 <details>
 <summary><strong>Get Users</strong></summary>
 
+
 | Method | API                        |
 |--------|----------------------------|
 | GET    | localhost:8080/api/v1/user |
@@ -35,6 +36,7 @@ For further reference, please consider the following sections:
 <details>
 
 <summary><strong>Get Users By ID</strong></summary>
+
 
 | Method | API                             |
 |--------|---------------------------------|
