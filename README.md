@@ -7,8 +7,7 @@ For further reference, please consider the following sections:
 ## API Documentation
 ### User
 <details>
-<summary><strong>Get Users</strong></summary>
-
+<summary>Get Users</summary>
 
 | Method | API                        |
 |--------|----------------------------|
@@ -35,8 +34,7 @@ For further reference, please consider the following sections:
 
 <details>
 
-<summary><strong>Get Users By ID</strong></summary>
-
+<summary>Get Users By ID</summary>
 
 | Method | API                             |
 |--------|---------------------------------|
