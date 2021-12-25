@@ -12,7 +12,8 @@ For further reference, please consider the following sections:
 | Method | API                        |
 |--------|----------------------------|
 | GET    | localhost:8080/api/v1/user |
-####Response
+
+#### Response
  ```                                                   
     [
         {
@@ -41,8 +42,8 @@ For further reference, please consider the following sections:
 
 ``` 
 Parameter  - {id}
- ```
-####Response
+```
+#### Response
 ```
 {
     "uuid": "4e4b9a32-f450-4987-b5c9-9c25e9deff0f",
