@@ -37,9 +37,23 @@ public class UserController {
 
     // get user by id
     @GetMapping("/user/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Integer userId) throws ResourceNotFoundException {
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Integer userId)
+            throws ResourceNotFoundException {
         User user = userRepository.findById(userId).orElseThrow(() ->
                 new ResourceNotFoundException("User Not found" + userId));
         return ResponseEntity.ok().body(user);
+    }
+    
+    // Update user
+    @PutMapping("/user/{id}")
+    public ResponseEntity<User> updateUser(
+            @PathVariable(value = "id") Integer userId,
+            @RequestBody User userBody) throws ResourceNotFoundException {
+        User users = userRepository.findById(userId).orElseThrow(() ->
+                new ResourceNotFoundException("User Not found" + userId));
+        users.setFirstName(userBody.getFirstName());
+        users.setLastName(userBody.getLastName());
+        final User updatedUser = userRepository.save(users);
+        return ResponseEntity.ok(updatedUser);
     }
 }
