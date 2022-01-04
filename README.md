@@ -53,3 +53,25 @@ Parameter  - {id}
 }
 ```
 </details>
+
+<details>
+
+<summary>Create new user</summary>
+
+| Method | API                        |
+|--------|----------------------------|
+| POST   | localhost:8080/api/v1/user |
+
+``` 
+Body - JSON
+    {
+        "firstName": "firstName",
+        "lastName": "lastName"
+    }
+
+```
+#### Response
+```
+Status: 200 OK
+```
+</details>
