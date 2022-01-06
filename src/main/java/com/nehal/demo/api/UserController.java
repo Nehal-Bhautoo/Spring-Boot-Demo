@@ -29,13 +29,18 @@ public class UserController {
 
     // create new user
     @PostMapping("/user")
-    public void addUser(@RequestBody User user) {
+    public void addUser(@RequestBody User userBody) {
+        User user = new User();
+        user.setFirstName(userBody.getFirstName());
+        user.setLastName(userBody.getLastName());
+        user.setPassword(encode(userBody.getPassword()));
         userService.addUser(user);
     }
 
     // get all user
     @GetMapping("/user")
     public List<User> getAllUsers() {
+        System.out.println(userRepository.findAll().toString());
         return userRepository.findAll();
     }
 

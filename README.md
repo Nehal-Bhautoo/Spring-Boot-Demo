@@ -20,13 +20,36 @@ For further reference, please consider the following sections:
             "uuid": "4e4b9a32-f450-4987-b5c9-9c25e9deff0f",
             "firstName": "Nehal",
             "lastName": "Bhautoo",
+            "password": "2OBbmWY8DRP1r3rWxRT+z84ocX+30S7x",
             "id": 1
         },
         {
             "uuid": "98e1a353-ca95-4275-9c67-75b8bb233587",
             "firstName": "Chandler",
             "lastName": "Bing",
+            "password": "Qq6VHscANNkY6Kv9vu3PAQ==",
             "id": 4
+        },
+        {
+            "uuid": "eb0ec31c-7f59-4a4a-8c44-7cc1a55fddee",
+            "firstName": "firstName",
+            "lastName": "lastName",
+            "password": "+emdiEKUw1cdELiuB1PmyyEj3jRKaC1e",
+            "id": 5
+        },
+        {
+            "uuid": "d8d254d7-7299-4d7b-917c-689703957e31",
+            "firstName": "new",
+            "lastName": "user",
+            "password": "a+4utOm8b9toFykuACiW/f6+6O2w5X/r",
+            "id": 6
+        },
+        {
+            "uuid": "3b624ac5-6612-43f6-8e58-29fde3f8046e",
+            "firstName": "test",
+            "lastName": "test",
+            "password": "7fS7OCPzDhQWdYvxF5gojw==",
+            "id": 7
         }
     ]
 ```    
@@ -45,10 +68,11 @@ Parameter  - {id}
 ```
 #### Response
 ```
-{
+ {
     "uuid": "4e4b9a32-f450-4987-b5c9-9c25e9deff0f",
     "firstName": "Nehal",
     "lastName": "Bhautoo",
+    "password": "2OBbmWY8DRP1r3rWxRT+z84ocX+30S7x",
     "id": 1
 }
 ```
@@ -66,10 +90,14 @@ Parameter  - {id}
 Body - JSON
     {
         "firstName": "firstName",
-        "lastName": "lastName"
+        "lastName": "lastName",
+        "password": "password"
     }
-
 ```
+
+The password will be encrypted before saving in database.
+Method used: Jasypt (Java Simplified Encryption)
+
 #### Response
 ```
 Status: 200 OK
@@ -88,7 +116,8 @@ Status: 200 OK
 Body - JSON
     {
         "firstName": "firstName",
-        "lastName": "lastName"
+        "lastName": "lastName",
+        "password": "password"
     }
 
 ```
@@ -102,18 +131,10 @@ Status: 200 OK
 
 <summary>Delete user</summary>
 
-| Method | API                        |
-|--------|----------------------------|
-| POST   | localhost:8080/api/v1/user |
+| Method | API                             |
+|--------|---------------------------------|
+| POST   | localhost:8080/api/v1/user/{id} |
 
-``` 
-Body - JSON
-    {
-        "firstName": "firstName",
-        "lastName": "lastName"
-    }
-
-```
 #### Response
 ```
 Status: 200 OK

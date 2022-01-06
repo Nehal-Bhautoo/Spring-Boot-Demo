@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.util.UUID;
 
+import static com.nehal.demo.encryption.JasyptEncryptorUtils.decode;
+
 @Entity
 @Table(name="user")
 public class User {
@@ -71,5 +73,16 @@ public class User {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", uuid=" + uuid +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + decode(password) + '\'' +
+                '}';
     }
 }
