@@ -11,6 +11,5 @@ public interface UserDao {
     default int insertUser(User user) {
         return insertUser(id, user);
     }
-
     List<User> getUser();
 }
