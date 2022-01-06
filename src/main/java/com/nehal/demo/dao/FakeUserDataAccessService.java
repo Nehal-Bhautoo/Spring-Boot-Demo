@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static com.nehal.demo.encryption.JasyptEncryptorUtils.encode;
+
 @Repository("fakeDao")
 public class FakeUserDataAccessService implements UserDao {
     @Autowired
@@ -17,8 +19,8 @@ public class FakeUserDataAccessService implements UserDao {
 
     @Override
     public int insertUser(UUID uuid, User user) {
-        userList.add(new User(uuid, user.getFirstName(), user.getLastName()));
-        userRepository.save(new User(uuid, user.getFirstName(), user.getLastName()));
+        userList.add(new User(uuid, user.getFirstName(), user.getLastName(), encode(user.getPassword())));
+        userRepository.save(new User(uuid, user.getFirstName(), user.getLastName(), encode(user.getPassword())));
         return 1;
     }
 

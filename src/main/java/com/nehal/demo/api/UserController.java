@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.nehal.demo.encryption.JasyptEncryptorUtils.encode;
+
 @RequestMapping("api/v1")
 @RestController
 public class UserController {
@@ -55,6 +57,7 @@ public class UserController {
                 new ResourceNotFoundException("User Not found" + userId));
         users.setFirstName(userBody.getFirstName());
         users.setLastName(userBody.getLastName());
+        users.setPassword(encode(userBody.getPassword()));
         final User updatedUser = userRepository.save(users);
         return ResponseEntity.ok(updatedUser);
     }
