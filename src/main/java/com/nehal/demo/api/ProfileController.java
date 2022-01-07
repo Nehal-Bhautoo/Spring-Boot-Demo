@@ -65,7 +65,7 @@ public class ProfileController {
     public Map<String, Boolean> deleteProfile(@PathVariable(value = "id") Integer userId)
             throws ResourceNotFoundException {
         Profile profile = profileRepo.findById(userId).orElseThrow(() ->
-                new ResourceNotFoundException("Profile Not found" + userId));
+            new ResourceNotFoundException("Profile Not found" + userId));
         profileRepo.delete(profile);
         Map <String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);

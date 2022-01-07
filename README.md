@@ -1,12 +1,10 @@
 # Spring Boot Application Demo
 
 ### Reference Documentation
-For further reference, please consider the following sections:
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+)
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+)
+<a href="https://github.com/Nehal-Bhautoo/Spring-Boot-Demo/tree/master/postman%20collection">Get Postman collection</a>
+
+For further reference, please consider the following sections:
 
 ## API Documentation
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) User
